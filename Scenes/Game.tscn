@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/LampPost.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/light_shadow_light.png" type="Texture" id=2]
+
+[node name="Game" type="Node2D"]
+
+[node name="Lamppost" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="Lamppost"]
+position = Vector2( 10416, -4448 )
+texture = ExtResource( 2 )
+color = Color( 0.937255, 0.901961, 0.345098, 1 )
+
+[node name="LampPost" type="Sprite" parent="Lamppost"]
+position = Vector2( 295.722, 353.675 )
+rotation = 0.0748599
+scale = Vector2( 0.0599492, 0.0599492 )
+texture = ExtResource( 1 )
+offset = Vector2( -110.575, 247.917 )
+
+[node name="WorldFG" type="StaticBody2D" parent="."]
+
+[node name="WorldCollision" type="CollisionPolygon2D" parent="WorldFG"]
+polygon = PoolVector2Array( 240, 376, -200, 488, -520, 488, -648, 608, 1592, 608, 1320, 432 )
+one_way_collision_margin = 0.0
+
+[node name="World" type="Polygon2D" parent="WorldFG"]
+position = Vector2( 256, 608 )
+color = Color( 0.976471, 0.713726, 0.0156863, 1 )
+polygon = PoolVector2Array( 1056, -176, -16, -232, -456, -120, -776, -120, -904, 0, 1336, 0 )
